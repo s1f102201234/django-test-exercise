@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from django.utils.timezone import make_aware 
-from django.utils.dateparse import parse_datetime 
+from django.utils.timezone import make_aware
+from django.utils.dateparse import parse_datetime
 from todo.models import Task
 
 
@@ -16,8 +16,7 @@ def index(request):
     else:
         tasks = Task.objects.order_by("-posted_at")
 
-
     context = {
-        "tasks" : tasks
+        "tasks": tasks
     }
-    return render(request,"todo/index.html", context)
+    return render(request, "todo/index.html", context)
